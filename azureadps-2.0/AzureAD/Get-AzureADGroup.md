@@ -66,9 +66,23 @@ PS C:\>Get-AzureADGroup -SearchString "All"
 ObjectId                             DisplayName                                 Description
 --------                             -----------                                 -----------
 093fc0e2-1d6e-4a1b-9bf8-effa0196f1f7 All Users
+093fc0e2-9b7a-5c4g-7zq3-igla0196f1d2 All Sales Users
 ```
 
 This command gets the groups that include the text All in their display names.
+
+### Example 3: Filter groups by DisplayName property
+```
+PS C:\>$groupDisplayName = 'All Sales Users'
+PS C:\>Get-AzureADGroup -Filter "DisplayName eq '$groupDisplayName'"
+
+
+ObjectId                             DisplayName                                 Description
+--------                             -----------                                 -----------
+093fc0e2-9b7a-5c4g-7zq3-igla0196f1d2 All Sales Users
+```
+
+This command gets the group that display name equals the value set for variable `$groupDisplayName`.
 
 ## PARAMETERS
 
